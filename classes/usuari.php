@@ -1,5 +1,5 @@
 <?php
-require_once ('connexio.php');
+require_once ('classes/connexio.php');
 
 class usuari{
 	private $id;
