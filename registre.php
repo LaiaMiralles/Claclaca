@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
 
-<form class="form-horizontal" action='registre2.php' method="POST">
+<form class="form-horizontal" action="registre2.php" method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Registrar-se</legend>
@@ -25,7 +25,16 @@ session_start();
       <label class="control-label"  for="nom">Nom</label>
       <div class="controls">
         <input type="text" id="nom" name="nom" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Escriu el teu nom complet.</p>
+        <p class="help-block">Escriu el teu nom.</p>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="cognoms">Cognoms</label>
+      <div class="controls">
+        <input type="text" id="cognoms" name="cognoms" placeholder="" required="required" class="input-xlarge">
+        <p class="help-block">Escriu el teu cognom.</p>
       </div>
     </div>
     
@@ -68,7 +77,7 @@ session_start();
     <div class="control-group">
       <!-- Button -->
       <div class="controls">
-        <button class="btn btn-success" name="enviar">Register</button>
+        <button type="submit" class="btn btn-success" name="enviar">Register</button>
       </div>
     </div>
   </fieldset>
