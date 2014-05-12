@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/connexio.php';
+//require_once 'classes/usuari.php';
 $pregunta = $_POST['pregunta'];
 $r_certa = $_POST['certa'];
 $r_falsa1 = $_POST['falsa1'];

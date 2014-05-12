@@ -1,5 +1,5 @@
 <?php
-require_once ('connexio.php');
+require_once ('classes/connexio.php');
 
 class usuari{
 	private $id;
@@ -22,10 +22,10 @@ class usuari{
 		$this->rang = $rang;
 		$this->titol = $titol;
 	}	
-	public function getAtributs(){
+	/*public function getAtributs(){
 		$atributs = "Nom: ".$this->nom.". Cognoms: ".$this->cognoms.". Correu electrònic: ".$this->correu.". NickName: ".$this->nickname.". Màxima puntuació: ".$this->max_puntuacio.". Rang: ".$this->rang.". Títol: ".$this->titol;
 		return $atributs;		
-	}
+	}*/
 	public function getId(){
 		return $this->id;
 	}
@@ -46,9 +46,6 @@ class usuari{
 	}
 	public function getMax_Puntuacio(){
 		return $this->max_puntuacio;
-	}	
-	public function getPassword(){
-		return $this->password;
 	}
 	public function getRang(){
 		return $this->rang;
@@ -63,16 +60,28 @@ class usuari{
 		$this->id = $id;
 	}
 	public function registre(){
-		//implementar
+		$db = new connexio();
+		$nom = $this->nom." ".$this->cognoms; 
+		if ($resultat = $db->query("INSERT INTO usuaris (nom, correu, password, nickname) values ('$nom', '$this->correu', '$this->password', '$this->nickname')")){
+			$id = $db->insert_id;
+			echo "Usuari insertat";
+			 
+		}
+		else {
+			echo "Error funció insertar Classe Usuari: ", $db->error;
+			$id = 0;
+		}
+		$db->close();
+		return $id;
 	}
 	public function setRang($rang){
 		$this->rang = $rang;
 	}
 	public function setTitol($titol){
 		$this->titol = $titol;
-	}	
+	}
 }
-
+/*
 class claclaquer extends usuari{
 	
 	function __construct(){
@@ -97,6 +106,6 @@ class admin extends usuari{
 		//implementar
 	}
 }
-
+*/
 
 ?>
