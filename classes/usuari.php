@@ -63,7 +63,18 @@ class usuari{
 		$this->id = $id;
 	}
 	public function registre(){
-		//implementar
+		$db = new connexio();
+		 
+		if ($db->query('INSERT INTO usuaris (nom, correu, password, nickname) values ("'.$this->nom.'", "'.$this->correu.'","'.$this->password.'","'.$this->nickname.'" 0, 0, 0)')){
+			$id = $db->insert_id;
+			 
+		}
+		else {
+			echo "Error funció insertar Classe Usuari: ", $db->error;
+			$id = 0;
+		}
+		$db->close();
+		return $id;
 	}
 	public function setRang($rang){
 		$this->rang = $rang;
