@@ -1,41 +1,55 @@
-<?php 
-$db = new connexio();
-
-// verificamos si se han enviado ya las variables necesarias.
-if ($db->query=isset($_POST["usuari"])) {
-   $usuari = $_POST["usuari"];
-   $nick = $_POST["nick"];   
-   $password = $_POST["password"];
-   $password_confirm = $_POST["password_confirm"];
-   $email = $_POST["email"];
-   // Hay campos en blanco
-   if($db->query=($usuari==NULL|$nick==NULL|$password==NULL|$password_confirm==NULL|$email==NULL)) {
-      echo "un campo está vacio.";
-      
-   }else{
-      // ¿Coinciden las contraseñas?
-      if($db->query=$password!=$password_confirm) {
-         echo "Las contraseñas no coinciden";
-         
-      }else{
-         // Comprobamos si el nombre de usuario o la cuenta de correo ya existían
-         $checkuser = $db->query("SELECT nickname FROM usuaris WHERE nickname='$nick'");
-         $username_exist = $db->query($checkuser);
-         $checkemail = $db->query("SELECT correu FROM usuaris WHERE correu='$email'");
-         $email_exist = $db->query($checkemail);
-         if ($email_exist>0|$username_exist>0) {
-            echo "El nombre de usuario o la cuenta de correo estan ya en uso";
-            
-         }else{
-            $db->query = 'INSERT INTO usuaris (nom, correu, password, nickname)
-            VALUES (\''.$usuari.'\',\''.$email.'\',\''.$password.'\',\''.$nick.'\')';
-            echo 'El usuario '.$usuari.' ha sido registrado de manera satisfactoria.<br />';
-            echo 'Ahora puede entrar ingresando su usuario y su password<br />';        
-                              
-
-         }
-      }
-   }
-}
-$db->close();
+<?php
+session_start();
 ?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<title>Registre - Claclaca</title>
+</head>
+<body>
+<?php 
+									
+					require_once 'classes/connexio.php';
+					require_once 'classes/usuari.php';
+					$nom = $_POST['nom'];					
+					$correu = $_POST['correu'];
+					$password = $_POST['password'];
+					$password_confirm = $_POST['password_confirm'];
+					$nickname = $_POST['nickname'];
+					
+					
+					
+					if ($password == $password_confirm){
+						$nou_usuari = new usuari($nom, $correu, $password, $nickname);
+						$nou_usuari->insertar();
+						$db = new connexio();
+							
+						$resultat = $db->query("SELECT * FROM usuaris WHERE nom = '$nom'");
+						$fila = $resultat->fetch_array(MYSQLI_ASSOC);
+						$_SESSION['id'] = $fila['id'];
+						$_SESSION['nom'] = $nom;
+						$_SESSION['correu'] = $correu;
+						$_SESSION['password'] = $password;
+						$_SESSION['nickname'] = $nickname;	
+						
+						
+						
+						
+						echo "Benvingut! Has iniciat sessió: ".$_SESSION['nom'];
+						
+						
+					}
+					else{
+						echo "Confirmació de contrasenya erronia <br> <a href='registre.php'>Tornar a registre</a>";
+					}
+					
+				?>	
+
+</body>
+</html>
