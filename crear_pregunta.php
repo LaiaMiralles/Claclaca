@@ -1,4 +1,10 @@
-<?php ?>
+<?php 
+require_once 'classes/pregunta.php';
+$p = new pregunta(NULL,NULL,NULL,NULL);
+//var_dump($p);
+$num_preguntes = $p->getNumPreguntes();
+//var_dump($num_preguntes);
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -18,16 +24,17 @@
 		
 		<span>Nivell de la pregunta:</span>
 		<input type="number" name="nivell" value="0"/><br><br>	
-		<span>Categoria:</span><br>		
-		<input type="radio" name="categoria" value="1">Preguntes trampa<br>		
-		<input type="radio" name="categoria" value="2">Lògica<br>		
-		<input type="radio" name="categoria" value="3">Cultura General<br>		
-		<input type="radio" name="categoria" value="4">Series i pel·lícules<br>		
-		<input type="radio" name="categoria" value="5">Jocs<br>		
-		<input type="radio" name="categoria" value="6">Gastronomia<br>		
-		<input type="radio" name="categoria" value="7">Animals<br><br>
+		<span>Categoria - - - Preguntes existents</span><br>		
+		<input type="radio" name="categoria" value="1">Preguntes trampa (<?=$num_preguntes[1]?>)<br>		
+		<input type="radio" name="categoria" value="2">Lògica (<?=$num_preguntes[2]?>)<br>		
+		<input type="radio" name="categoria" value="3">Cultura General (<?=$num_preguntes[3]?>)<br>		
+		<input type="radio" name="categoria" value="4">Series i pel·lícules (<?=$num_preguntes[4]?>)<br>		
+		<input type="radio" name="categoria" value="5">Jocs (<?=$num_preguntes[5]?>)<br>		
+		<input type="radio" name="categoria" value="6">Gastronomia (<?=$num_preguntes[6]?>)<br>		
+		<input type="radio" name="categoria" value="7">Animals (<?=$num_preguntes[7]?>)<br><br>
 		
 		<input type="submit" value="enviar">
 	</form>
+		
 </body>
 </html>

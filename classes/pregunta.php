@@ -40,11 +40,13 @@ class pregunta{
 		$db = new connexio();//prova de ferho amb una select
 		$resultat1 = $db->query("SELECT * FROM categories");
 		$num_categories = $resultat1->num_rows;
-		var_dump($num_categories);
+		//var_dump($num_categories);
 		
 		for ($i = 1; $i <= $num_categories; $i++){
-			$resultat = $db->query("SELECT * FROM preguntes WHERE categoria = $i");			
-			$arrai_numcategories[$i] = $resultat->num_rows;
+			$resultat = $db->query("SELECT COUNT(*) asd FROM preguntes WHERE categoria = $i");			
+			//$arrai_numcategories[$i] = $resultat->num_rows;
+			$fila = $resultat->fetch_array(MYSQLI_ASSOC);
+			$arrai_numcategories[$i] = $fila['asd'];
 		}
 		return $arrai_numcategories;
 	}
