@@ -1,5 +1,5 @@
 <?php
-require_once 'pregunta.php';
+//require_once 'pregunta.php';
 require_once 'connexio.php';
 class partida{
 	private $id;
