@@ -21,7 +21,8 @@
            <div class="span12">
                <div class="span6">
                    	<div class="span4 offset2" style="margin-top:15px;">
-                   	 <a href="registre.php" class="btn btn-primary btn-cons pull-right">Registra't</a>
+                   	 <a href="registre.php" class="btn btn-primary btn-cons pull-left">Registra't</a>
+                   	 <a href="login.php" class="btn btn-success btn-cons">Log in</a>
                		</div>
                </div>
            </div>
@@ -36,7 +37,7 @@
   <div class="row">
     <div class="span12">
       <div class="hero-unit center">
-          <h1>Claclaca<small><font face="Tahoma" color="red">?¿?</font></small></h1>
+          <h1><center><img src="imatges/claclaca.png" alt="Claclaca"></center></h1>
         </div>
         <br />
       <div class="thumbnail">
@@ -54,7 +55,7 @@
                 <center>
                   <img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle" alt="the-brains">
                   <br>
-                  <h4 class="footertext">Programmer</h4>
+                  <h4 class="footertext">Ranking</h4>
                   <p class="footertext">You can thank all the crazy programming here to this guy.<br>
                 </center>
               </div>
@@ -62,7 +63,7 @@
                 <center>
                   <img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle" alt="...">
                   <br>
-                  <h4 class="footertext">Artist</h4>
+                  <h4 class="footertext">Perfil</h4>
                   <p class="footertext">All the images here are hand drawn by this man.<br>
                 </center>
               </div>
@@ -70,7 +71,7 @@
                 <center>
                   <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
                   <br>
-                  <h4 class="footertext">Designer</h4>
+                  <h4 class="footertext">Foro</h4>
                   <p class="footertext">This pretty site and the copy it holds are all thanks to this guy.<br>
                 </center>
               </div>
