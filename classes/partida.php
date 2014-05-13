@@ -1,5 +1,6 @@
 <?php
-
+require_once 'pregunta.php';
+require_once 'connexio.php';
 class partida{
 	private $id;
 	private $id_usuari;
@@ -41,6 +42,14 @@ class partida{
 	}
 	public function carregar(){
 		//implementar
+	}
+	public function novaPregunta($nivell){ //retorna una pregunta random del nivell demanat
+		$db = new connexio();
+		
+		$resultat = $db->query("SELECT * FROM preguntes WHERE nivell_pregunta = $nivell order by rand() LIMIT 1");
+		$fila = $resultat->fetch_array(MYSQLI_ASSOC);
+		return $fila;
+		
 	}
 	
 }

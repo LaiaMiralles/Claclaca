@@ -3,14 +3,23 @@ require_once 'connexio.php';
 class pregunta{
 	private $id;
 	private $enunciat;
-	private $resposta;
+	private $resposta_certa;
+	private $resposta_falsa1;
+	private $resposta_falsa2;
+	private $resposta_falsa3;
 	private $categoria;
+	private $nivell;
 	
-	function __construct($id, $enunciat, $resposta, $categoria){
+	function __construct($id, $enunciat, $resposta_certa, $resposta_falsa1, $resposta_falsa2, $resposta_falsa3, $categoria, $nivell){
 		$this->id = $id;
 		$this->enunciat = $enunciat;
-		$this->resposta = $resposta;
-		$this->categoria = $categoria;		
+		$this->resposta_certa = $resposta_certa;
+		$this->resposta_falsa1 = $resposta_falsa1;
+		$this->resposta_falsa2 = $resposta_falsa2;
+		$this->resposta_falsa3 = $resposta_falsa3;
+		$this->categoria = $categoria;	
+		$this->nivell = $nivell;
+			
 	}
 	public function getId(){
 		return $this->id;
@@ -37,10 +46,10 @@ class pregunta{
 		$this->categoria = $categoria;
 	}
 	public function getNumPreguntes(){ //retorna un arrai amb el número de preguntes de cada categoria
-		$db = new connexio();//prova de ferho amb una select
+		$db = new connexio();
 		$resultat1 = $db->query("SELECT * FROM categories");
 		$num_categories = $resultat1->num_rows;
-		//var_dump($num_categories);
+		
 		
 		for ($i = 1; $i <= $num_categories; $i++){
 			$resultat = $db->query("SELECT COUNT(*) asd FROM preguntes WHERE categoria = $i");			
