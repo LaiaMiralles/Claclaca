@@ -17,9 +17,12 @@ session_start();
 <body>
 
 <div class="container">
+      <div class="hero-unit center">
+          <h1><center><img src="imatges/claclaca.png" alt="Claclaca"></center></h1>
+        </div>
 	<div class="login-container">
             <div id="output"></div>
-            <div class="avatar"></div>
+            
             <div class="form-box">
             <?php
 				if(isset($_SESSION['id'])){
@@ -30,7 +33,7 @@ session_start();
 			?>
             
                 <form action="login2.php" method="POST">
-                    <input name="correu" type="email" placeholder="correu">
+                    <input name="nickname" type="nickname" placeholder="nickname">
                     <input name="password" type="password" placeholder="password">
                     <input type="submit" value="enviar">
                     
