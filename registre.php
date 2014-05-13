@@ -13,74 +13,80 @@ session_start();
 <title>Registre - Claclaca</title>
 </head>
 <body>
+ <div class="hero-unit center">
+          <h1><center><img src="imatges/claclaca.png" alt="Claclaca"></center></h1>
 
-<form class="form-horizontal" action="registre2.php" method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="">Registrar-se</legend>
-    </div>
+
+<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="registre2.php" method="post">
+          <fieldset>
+            <legend class="text-center">Registre de nou usuari</legend>
     
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="nom">Nom</label>
-      <div class="controls">
-        <input type="text" id="nom" name="nom" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Escriu el teu nom.</p>
-      </div>
-    </div>
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Nom</label>
+              <div class="col-md-9">
+                <input id="nom" name="nom" type="text" placeholder="El teu nom" class="form-control">
+              </div>
+            </div>
+            
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="cognom">Cognom</label>
+              <div class="col-md-9">
+                <input id="cognom" name="cognom" type="text" placeholder="El teu cognom" class="form-control">
+              </div>
+            </div>
     
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="cognoms">Cognoms</label>
-      <div class="controls">
-        <input type="text" id="cognoms" name="cognoms" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Escriu el teu cognom.</p>
-      </div>
-    </div>
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Correu</label>
+              <div class="col-md-9">
+                <input id="correu" name="correu" type="text" placeholder="El teu correu" class="form-control">
+              </div>
+            </div>
+            
+            <!-- Nickname input -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="nickname">Nickname</label>
+              <div class="col-md-9">
+                 <input  id="nickname" name="nickname" placeholder="Nickname" class="form-control">
+              </div>
+            </div>
     
-    <div class="control-group">
-      <!-- Username -->
-      <label class="control-label"  for="nickname">Nick</label>
-      <div class="controls">
-        <input type="text" id="nickname" name="nickname" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">El teu nick pot tenir lletres i números.</p>
+            <!-- Password input -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="password">Contrasenya</label>
+              <div class="col-md-9">
+                 <input  id="password" name="password" type="password" placeholder="Contrasenya" class="form-control">
+              </div>
+            </div>
+            
+            <!-- Password confirm input -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="password_confirm">Contrasenya</label>
+              <div class="col-md-9">
+                 <input  id="password_confirm" name="password_confirm" type="password" placeholder="Confirmar contrasenya" class="form-control">
+              </div>
+            </div>
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-primary btn-lg">Registra't</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
       </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="correu" >E-mail</label>
-      <div class="controls">
-        <input type="text" id="correu" name="correu" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Escriu el teu correu</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label" for="password">Contrasenya</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Escriu la teva contrasenya.</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Confirmar Contrasenya)</label>
-      <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" required="required" class="input-xlarge">
-        <p class="help-block">Repeteix la teva contrasenya.</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button type="submit" class="btn btn-success" name="enviar">Register</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+	</div>
+</div>
+</div>
+
+
 </body>
 </html>
