@@ -8,8 +8,6 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
 <script src="js/jquery-2.1.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
 <title>Claclaca</title>
 </head>
 
