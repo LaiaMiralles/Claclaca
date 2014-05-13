@@ -23,7 +23,7 @@
            <div class="span12">
                <div class="span6">
                    	<div class="span4 offset2" style="margin-top:15px;">
-                   		<button type="button" class="btn btn-primary btn-cons pull-right">Registra't</button>
+                   	 <a href="registre.php" class="btn btn-primary btn-cons pull-right">Registra't</a>
                		</div>
                </div>
            </div>
