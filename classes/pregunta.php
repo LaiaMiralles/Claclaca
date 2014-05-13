@@ -1,5 +1,5 @@
 <?php
-
+require_once 'connexio.php';
 class pregunta{
 	private $id;
 	private $enunciat;
@@ -35,5 +35,17 @@ class pregunta{
 	}
 	public function setCategoria($categoria){
 		$this->categoria = $categoria;
+	}
+	public function getNumPreguntes(){ //retorna un arrai amb el número de preguntes de cada categoria
+		$db = new connexio();//prova de ferho amb una select
+		$resultat1 = $db->query("SELECT * FROM categories");
+		$num_categories = $resultat1->num_rows;
+		var_dump($num_categories);
+		
+		for ($i = 1; $i <= $num_categories; $i++){
+			$resultat = $db->query("SELECT * FROM preguntes WHERE categoria = $i");			
+			$arrai_numcategories[$i] = $resultat->num_rows;
+		}
+		return $arrai_numcategories;
 	}
 }
